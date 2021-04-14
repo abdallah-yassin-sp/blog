@@ -1,0 +1,38 @@
+.header-1 {
+  border-bottom: 1px solid $dark_grey;
+  padding: 10px 0px;
+  .container {
+    display: flex;
+  }
+  a {
+    &:not(:last-child) {
+      color: $dark_grey;
+    }
+  }
+
+  .right-col {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    a {
+      &:nth-child(2) {
+        margin: 0px 15px;
+      }
+    }
+  }
+}
+
+.header-2 {
+  .navbar {
+    padding: 0.5rem 0.5rem;
+  }
+
+  ul {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.nav-link {
+  font-size: 13px;
+}

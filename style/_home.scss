@@ -1,0 +1,30 @@
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.item-1,
+.item-2,
+.item-3 {
+  background-image: url("../assets/images/1_KWvw0J4A3S8DwGlxyvzgqQ.jpeg");
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+
+    h2 {
+      color: $white;
+      font-size: 40px;
+      padding-bottom: 50px;
+    }
+  }
+}

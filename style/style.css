@@ -1,9 +1,284 @@
-.page {
-  background-color: red;
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
-.logo {
-  color: #000;
-  background-color: #000;
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.header-1 {
+  border-bottom: 1px solid #3d3d29;
+  padding: 10px 0px;
+}
+
+.header-1 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header-1 a:not(:last-child) {
+  color: #3d3d29;
+}
+
+.header-1 .right-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.header-1 .right-col a:nth-child(2) {
+  margin: 0px 15px;
+}
+
+.header-2 .navbar {
+  padding: 0.5rem 0.5rem;
+}
+
+.header-2 ul {
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav-link {
+  font-size: 13px;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.item-1,
+.item-2,
+.item-3 {
+  background-image: url("../assets/images/1_KWvw0J4A3S8DwGlxyvzgqQ.jpeg");
+  background-color: rgba(0, 0, 0, 0.5);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
+}
+
+.item-1 .container,
+.item-2 .container,
+.item-3 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.item-1 .container h2,
+.item-2 .container h2,
+.item-3 .container h2 {
+  color: #fff;
+  font-size: 40px;
+  padding-bottom: 50px;
+}
+
+.sign-in-page .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 0px 5px #000;
+          box-shadow: 0px 0px 5px #000;
+  padding: 0px;
+  margin-top: 50px;
+}
+
+.sign-in-page .container .left-column {
+  background-color: #fff;
+  border-radius: 25px 0px 0px 25px;
+  padding: 50px 20px 50px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sign-in-page .container .left-column form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.sign-in-page .container .right-column {
+  padding: 20px 0px;
+  border-radius: 0px 25px 25px 0px;
+  background-color: #00cc00;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sign-in-page .container .right-column h2 {
+  color: #fff;
+  font-size: 50px;
+}
+
+.sign-in-page .container .form-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 15px;
+}
+
+.sign-in-page .container .sign-in {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sign-in-page .container .sign-in input[type="submit"] {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid #00cc00;
+  background-color: #fff;
+}
+
+.sign-in-page .container .sign-in input[type="submit"]:hover {
+  background-color: #00cc00;
+  color: #fff;
+}
+
+.sign-up-page .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 0px 5px #000;
+          box-shadow: 0px 0px 5px #000;
+  padding: 0px;
+  margin-top: 50px;
+}
+
+.sign-up-page .container .left-column {
+  background-color: #fff;
+  border-radius: 25px 0px 0px 25px;
+  padding: 50px 20px 50px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sign-up-page .container .left-column form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.sign-up-page .container .right-column {
+  padding: 20px 0px;
+  border-radius: 0px 25px 25px 0px;
+  background-color: #00cc00;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sign-up-page .container .right-column h2 {
+  color: #fff;
+  font-size: 50px;
+  text-align: center;
+}
+
+.sign-up-page .container .form-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 15px;
+}
+
+.sign-up-page .container .form-item input:not([type="sumit"]) {
+  padding: 5px 10px;
+}
+
+.sign-up-page .container .sign-in {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sign-up-page .container .sign-in input[type="submit"] {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid #00cc00;
+  background-color: #00cc00;
+  color: #fff;
+}
+
+.sign-up-page .container .sign-in input[type="submit"]:hover {
+  background-color: #fff;
+  color: #00cc00;
 }
 /*# sourceMappingURL=style.css.map */

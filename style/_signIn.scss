@@ -1,0 +1,54 @@
+.sign-in-page {
+  .container {
+    display: flex;
+    border-radius: 25px;
+    box-shadow: 0px 0px 5px $black;
+    padding: 0px;
+    margin-top: 50px;
+
+    .left-column {
+      background-color: $white;
+      border-radius: 25px 0px 0px 25px;
+      padding: 50px 20px 50px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      form {
+        flex: 1;
+      }
+    }
+    .right-column {
+      padding: 20px 0px;
+      border-radius: 0px 25px 25px 0px;
+      background-color: $green;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h2 {
+        color: $white;
+        font-size: 50px;
+      }
+    }
+    .form-item {
+      display: flex;
+      flex-direction: column;
+      margin-top: 15px;
+    }
+    .sign-in {
+      align-items: center;
+      justify-content: center;
+
+      input[type="submit"] {
+        width: fit-content;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 1px solid $green;
+        background-color: $white;
+        &:hover {
+          background-color: $green;
+          color: $white;
+        }
+      }
+    }
+  }
+}

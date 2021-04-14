@@ -1,0 +1,22 @@
+-- craete Users table
+CREATE TABLE users (
+    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)
+
+--create Articles table
+CREATE TABLE articles (
+    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(50) NOT NULL,
+    body VARCHAR(250) NOT NULL,
+    category VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+)
+
+-- Add author to articles table
+ALTER TABLE articles
+ADD author VARCHAR(20) NOT NULL
+AFTER category;

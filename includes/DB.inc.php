@@ -15,8 +15,12 @@ class DB
         $this->db_name = "blog";
 
         $con = new mysqli($this->server_name, $this->username, $this->password, $this->db_name);
-        if (!$con) {
-            echo "Connection Error";
+        if ($con->connect_error) {
+            die("Connection failed: " . $con->connect_error);
         }
+        return true;
     }
 }
+
+$db = new DB();
+echo $db->connect();
