@@ -18,9 +18,6 @@ class DB
         if ($con->connect_error) {
             die("Connection failed: " . $con->connect_error);
         }
-        return true;
+        return $con;
     }
 }
-
-$db = new DB();
-echo $db->connect();

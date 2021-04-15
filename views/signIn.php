@@ -1,5 +1,25 @@
 <?php
 require_once("header.php");
+require_once("../includes/User.inc.php");
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $user = new User();
+    $find_user = $user->get_user($email);
+
+    if ($find_user == "No user found") {
+        die($find_user);
+    } else {
+        foreach ($find_user as $user) {
+            if (password_verify($password, $user['password'])) {
+                $_SESSION['user'] = $find_user;
+                header("location: index.php");
+            }
+        }
+    }
+}
 ?>
 
 <div class="sign-in-page row">

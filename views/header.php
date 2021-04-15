@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 ?>
 
 
@@ -30,7 +30,19 @@
                 </a>
                 <div class="right-col col-lg-6">
                     <a href="#"><i class="fas fa-search"></i></a>
-                    <a href="#">Sign in</a>
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                        foreach ($_SESSION['user'] as $data) {
+                    ?>
+                            <a href="user.php?user=<?php echo $data['email'] ?>"><?php echo $data['email'] ?></a>
+                        <?php
+                        }
+                    } else {
+                        ?>
+                        <a href="signIn.php">Sign in</a>
+                    <?php
+                    }
+                    ?>
                     <a href="#" class="btn btn-success">Get Started</a>
                 </div>
             </div>
@@ -45,9 +57,6 @@
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
                                 <a class="nav-link" aria-current="page" href="#">HOME</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">ARCHITECTURE</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">ARCHITECTURE</a>
