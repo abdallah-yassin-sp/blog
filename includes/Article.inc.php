@@ -8,6 +8,7 @@ class Article
     private $body;
     private $user;
     private $category;
+    private $image;
 
     private function db_connect()
     {
@@ -15,12 +16,59 @@ class Article
         return $db->connect();
     }
 
-    public function upload($title, $body, $user, $category)
+    public function post($user, $title, $body, $category, $image)
     {
+        $this->user = $user;
         $this->title = $title;
         $this->body = $body;
-        $this->user = $user;
         $this->category = $category;
+        $this->image = $image;
+
+        $allawed_extensions = ['png', 'jpg', 'jpeg'];
+        $image_path = pathinfo($this->image['name']);
+
+        $image_name = $this->image['name'];
+        $image_tmp_name = $this->image['tmp_name'];
+        $image_error = $this->image['error'];
+        $image_size = $this->image['size'];
+        $image_extension = strtolower($image_path['extension']);
+
+        $dir = dirname(__FILE__, 2);
+        // die($dir);
+
+        //check if image exist, add number between name
+        $counter = 1;
+        while (file_exists($image_name)) {
+            $image_name = $image_path['filename'] . '_' . $counter . '.' . $image_extension;
+            $counter++;
+        }
+
+        $img_new_dir = $dir . "/assets/images/" . $image_name;
+        echo $img_new_dir;
+
+        if (in_array($image_extension, $allawed_extensions)) {
+            if ($image_error === 0) {
+                if ($image_size < 2000000) {
+                    if (!move_uploaded_file($image_tmp_name, $img_new_dir)) {
+                        return "Error Uploading";
+                    }
+                } else {
+                    return "Error: Image larger than 2MB";
+                }
+            } else {
+                return "Upload Error";
+            }
+        } else {
+            return "This file extension not allowed";
+        }
+
+        echo "<pre>";
+        var_dump($this->title);
+        var_dump($this->body);
+        var_dump($this->user);
+        var_dump($this->category);
+        var_dump($this->image);
+        die();
 
         $sql = "INSERT INTO articles (title, body, category, user_id)
         VALUES ('$this->title', '$this->body', '$this->category', '$this->user')";

@@ -2,6 +2,22 @@
 require_once("header.php");
 require_once("../includes/User.inc.php");
 
+//post new article
+if (isset($_POST['submit'])) {
+    $user = $_SESSION['user'][0]["id"];
+    $title = $_POST['article_title'];
+    $body = $_POST['article_body'];
+    $category = $_POST['category'];
+    if (isset($_FILES['article_image'])) {
+        $image = $_FILES['article_image'];
+    } else {
+        $image = "";
+    }
+
+    $article = new Article();
+    $article->post($user, $title, $body, $category, $image);
+}
+
 $user = $_GET['user'];
 $user1 = new User();
 $user1->get_user_articles($user);
@@ -28,17 +44,16 @@ if (!$user1->get_user_articles($user)) {
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" method="POST">
-                                <input type="hidden" name="user" value="<?= $_SESSION['user'] ?>">
-                                <div>
+                            <form action="" method="POST" enctype="multipart/form-data">
+                                <div class="new-article-input">
                                     <label for="title">Title</label>
                                     <input type="text" name="article_title" required>
                                 </div>
-                                <div>
+                                <div class="new-article-input">
                                     <label for="body">Text</label>
-                                    <textarea type="text" name="article_body" required></textarea>
+                                    <textarea type="text" name="article_body" rows="10" cols="50" required></textarea>
                                 </div>
-                                <div>
+                                <div class="new-article-input">
                                     <label for="category">Category</label>
                                     <select name="category" required>
                                         <option value="architecture" selected>Architecture</option>
@@ -49,20 +64,18 @@ if (!$user1->get_user_articles($user)) {
                                         <option value="design-agencies">Design Agencies</option>
                                     </select>
                                 </div>
-                                <div>
+                                <div class="new-article-input">
                                     <label for="image">Image</label>
                                     <input type="file" name="article_image">
                                 </div>
                                 <div class="modal-footer">
-                                    <input type="submit" value="POST" class="btn btn-success">
+                                    <input type="submit" name="submit" value="POST" class="btn btn-success">
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 <?php

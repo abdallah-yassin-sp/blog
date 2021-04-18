@@ -380,4 +380,24 @@ footer {
           transform: skewY(-5deg);
   background-image: url("../assets/images/5b6955226700d.png");
 }
+
+.new-article-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 15px;
+}
+
+.new-article-input input,
+.new-article-input select {
+  padding: 5px;
+}
+
+.new-article-input textarea {
+  resize: none;
+}
 /*# sourceMappingURL=style.css.map */

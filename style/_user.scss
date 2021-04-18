@@ -1,0 +1,14 @@
+.new-article-input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+
+  input,
+  select {
+    padding: 5px;
+  }
+
+  textarea {
+    resize: none;
+  }
+}
