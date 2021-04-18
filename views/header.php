@@ -1,5 +1,7 @@
 <?php
 session_start();
+require_once("../includes/Article.inc.php");
+$category_articles = new Article();
 ?>
 
 
@@ -34,7 +36,8 @@ session_start();
                     if (isset($_SESSION['user'])) {
                         foreach ($_SESSION['user'] as $data) {
                     ?>
-                            <a href="user.php?user=<?php echo $data['email'] ?>"><?php echo $data['email'] ?></a>
+                            <a href="user.php?user=<?php echo $data['id'] ?>"><?php echo $data['first_name'] ?></a>
+                            <a href="logout.php">LOGOUT</a>
                         <?php
                         }
                     } else {
@@ -43,7 +46,7 @@ session_start();
                     <?php
                     }
                     ?>
-                    <a href="#" class="btn btn-success">Get Started</a>
+                    <a href="#" class="btn btn-outline-success">Get Started</a>
                 </div>
             </div>
         </div>
@@ -56,25 +59,25 @@ session_start();
                     <div class="collapse navbar-collapse" id="navbar">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="#">HOME</a>
+                                <a class="nav-link" aria-current="page" href="index.php">HOME</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">ARCHITECTURE</a>
+                                <a class="nav-link" href="category.php?category=architecture">ARCHITECTURE</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">ART & ILLUSTRATION</a>
+                                <a class="nav-link" href="category.php?category=art-and-illustration">ART & ILLUSTRATION</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">BUSINESS & CORPOPATE</a>
+                                <a class="nav-link" href="category.php?category=business-and-corporate">BUSINESS & CORPORATE</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">CULTURE & EDUCATION</a>
+                                <a class="nav-link" href="category.php?category=culture-and-education">CULTURE & EDUCATION</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">E-COMMERCE</a>
+                                <a class="nav-link" href="category.php?category=e-commerce">E-COMMERCE</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">DESIGN AGENCIES</a>
+                                <a class="nav-link" href="category.php?category=design-agencies">DESIGN AGENCIES</a>
                             </li>
                         </ul>
                     </div>
@@ -82,3 +85,5 @@ session_start();
             </div>
         </div>
     </div>
+
+    <div class="inner-content">

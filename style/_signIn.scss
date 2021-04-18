@@ -17,18 +17,6 @@
         flex: 1;
       }
     }
-    .right-column {
-      padding: 20px 0px;
-      border-radius: 0px 25px 25px 0px;
-      background-color: $green;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      h2 {
-        color: $white;
-        font-size: 50px;
-      }
-    }
     .form-item {
       display: flex;
       flex-direction: column;
@@ -47,6 +35,27 @@
         &:hover {
           background-color: $green;
           color: $white;
+        }
+      }
+    }
+    .right-column {
+      padding: 20px 0px;
+      border-radius: 0px 25px 25px 0px;
+      background-color: $green;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      h2 {
+        color: $white;
+        font-size: 50px;
+      }
+      p {
+        color: $white;
+        a {
+          color: $white;
+          font-weight: bold;
+          text-decoration: underline;
         }
       }
     }

@@ -1,5 +1,10 @@
 <?php
 require_once("header.php");
+require_once("../includes/Article.inc.php");
+$articles = new Article();
+// echo "<pre>";
+// print_r($articles->get_all_articles());
+// die();
 ?>
 
 <div class="page">

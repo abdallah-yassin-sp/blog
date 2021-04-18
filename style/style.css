@@ -16,7 +16,7 @@ a:hover {
 }
 
 .header-1 {
-  border-bottom: 1px solid #3d3d29;
+  border-bottom: 1px solid #4d4d4f;
   padding: 10px 0px;
 }
 
@@ -27,7 +27,7 @@ a:hover {
 }
 
 .header-1 a:not(:last-child) {
-  color: #3d3d29;
+  color: #4d4d4f;
 }
 
 .header-1 .right-col {
@@ -102,6 +102,12 @@ a:hover {
   padding-bottom: 50px;
 }
 
+.page {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
 .sign-in-page .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -132,26 +138,6 @@ a:hover {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-}
-
-.sign-in-page .container .right-column {
-  padding: 20px 0px;
-  border-radius: 0px 25px 25px 0px;
-  background-color: #00cc00;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.sign-in-page .container .right-column h2 {
-  color: #fff;
-  font-size: 50px;
 }
 
 .sign-in-page .container .form-item {
@@ -187,6 +173,40 @@ a:hover {
 .sign-in-page .container .sign-in input[type="submit"]:hover {
   background-color: #00cc00;
   color: #fff;
+}
+
+.sign-in-page .container .right-column {
+  padding: 20px 0px;
+  border-radius: 0px 25px 25px 0px;
+  background-color: #00cc00;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sign-in-page .container .right-column h2 {
+  color: #fff;
+  font-size: 50px;
+}
+
+.sign-in-page .container .right-column p {
+  color: #fff;
+}
+
+.sign-in-page .container .right-column p a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .sign-up-page .container {
@@ -228,6 +248,10 @@ a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -240,6 +264,16 @@ a:hover {
   color: #fff;
   font-size: 50px;
   text-align: center;
+}
+
+.sign-up-page .container .right-column p {
+  color: #fff;
+}
+
+.sign-up-page .container .right-column p a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .sign-up-page .container .form-item {
@@ -280,5 +314,70 @@ a:hover {
 .sign-up-page .container .sign-in input[type="submit"]:hover {
   background-color: #fff;
   color: #00cc00;
+}
+
+footer {
+  margin-top: 100px;
+}
+
+.footer-contact-form,
+.sprintive-background {
+  position: relative;
+}
+
+.footer-contact-form::after,
+.sprintive-background::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  z-index: -1;
+  padding: 100px;
+}
+
+.footer-contact-form::after {
+  -webkit-transform: skewY(5deg);
+          transform: skewY(5deg);
+  background-color: #4d4d4f;
+}
+
+.footer-contact-form .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0px;
+  margin-top: 30px;
+}
+
+.footer-contact-form .container h3 {
+  color: #fff;
+}
+
+.footer-contact-form .container input {
+  padding: 5px;
+  border: none;
+  border-radius: 0px;
+}
+
+.footer-contact-form .container input[type="submit"] {
+  padding: 5px 20px;
+}
+
+.sprintive-background::after {
+  -webkit-transform: skewY(-5deg);
+          transform: skewY(-5deg);
+  background-image: url("../assets/images/5b6955226700d.png");
 }
 /*# sourceMappingURL=style.css.map */

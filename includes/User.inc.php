@@ -60,19 +60,9 @@ class User
         }
     }
 
-    public function get_articles($user)
+    public function get_user_articles($user)
     {
-        $query1 = "SELECT id FROM users WHERE email = '" . $user . "'";
-        $result1 = $this->db_connect()->query($query1);
-        $rows = $result1->num_rows;
-        if ($rows > 0) {
-            while ($row = $result1->fetch_assoc()) {
-                $data[] = $row;
-            }
-            $user_id = $data[0]['id'];
-        }
-        $query = "SELECT articles.title, articles.body from articles 
-        INNER JOIN users ON articles.user_id = users.id WHERE users.id = '" . $user_id . "'";
+        $query = "SELECT title, body from articles WHERE user_id = {$user}";
 
         $result = $this->db_connect()->query($query);
         $rows = $result->num_rows;

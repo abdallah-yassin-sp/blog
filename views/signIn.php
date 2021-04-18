@@ -41,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <div class="right-column col-lg-6">
             <h2>SIGN IN</h2>
+            <p>Don't have account, <a href="signup.php">SIGN UP</a></p>
         </div>
     </div>
 </div>
