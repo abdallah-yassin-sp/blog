@@ -2,6 +2,8 @@ $black: #000;
 $white: #fff;
 $green: #00cc00;
 $dark_grey: #4d4d4f;
+$light_grey: #888888;
+$light_blue: #f2f2f2;
 
 * {
   margin: 0px;
@@ -19,5 +21,51 @@ a {
   &:hover {
     cursor: pointer;
     text-decoration: none;
+  }
+}
+
+.popular-articles-container {
+  background-color: $light_blue;
+  margin-top: 50px;
+  padding: 20px 10px;
+  .popular-article {
+    margin-bottom: 20px;
+    img {
+      width: 100%;
+      min-height: 200px;
+      object-fit: cover;
+    }
+  }
+}
+
+.fa-exclamation-circle {
+  margin-right: 10px;
+}
+
+.error-page {
+  padding: 100px;
+  .container {
+    display: flex;
+    justify-content: center;
+    background: $light_blue;
+    padding: 100px;
+  }
+}
+
+.carousel-item {
+  position: relative;
+  .slider-image {
+    max-height: 500px;
+    object-fit: cover;
+  }
+  .heading-wrapper {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 75px;
+    width: 100%;
+    h2 {
+      color: $white;
+    }
   }
 }

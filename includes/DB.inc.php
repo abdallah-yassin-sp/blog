@@ -12,7 +12,7 @@ class DB
         $this->server_name = "localhost";
         $this->username = "root";
         $this->password = "root";
-        $this->db_name = "blog";
+        $this->db_name = "blog_db";
 
         $con = new mysqli($this->server_name, $this->username, $this->password, $this->db_name);
         if ($con->connect_error) {

@@ -31,3 +31,47 @@
 .page {
   flex: 1;
 }
+
+.home-section-2 {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0px;
+}
+
+.home-left-column {
+  padding-left: 10px;
+  flex: 65%;
+  .article {
+    padding-right: 20px;
+    margin-bottom: 50px;
+    img {
+      width: 100%;
+      min-height: 300px;
+      object-fit: cover;
+    }
+  }
+}
+
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  flex: 100%;
+}
+
+.home-right-column {
+  flex: 35%;
+  .categories {
+    background-color: $light_blue;
+    padding: 20px 10px;
+    .category {
+      margin: 5px 0px;
+      a {
+        font-size: 18px;
+      }
+      span {
+        color: $light_grey;
+      }
+    }
+  }
+}

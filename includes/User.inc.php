@@ -17,14 +17,14 @@ class User
 
     public function get_user($email)
     {
-        $sql = "SELECT * FROM users WHERE email = '" . $email . "'";
+        $sql = "SELECT * FROM users WHERE email = '{$email}'";
         $result = $this->db_connect()->query($sql);
         $rows = $result->num_rows;
         if ($rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $data[] = $row;
             }
-            return $data;
+            return $data[0];
         } else {
             return "No user found";
         }
@@ -50,8 +50,8 @@ class User
         $this->email = $email;
         $this->password = password_hash($password, PASSWORD_DEFAULT);
 
-        $insert_query = "INSERT INTO users (first_name, last_name, email, password) 
-        VALUES ('$this->first_name', '$this->last_name', '$this->email', '$this->password')";
+        $insert_query = "INSERT INTO blog_db.users (first_name, last_name, email, password) 
+        VALUES ('{$this->first_name}', '{$this->last_name}', '{$this->email}', '{$this->password}')";
 
         $result = $this->db_connect()->query($insert_query);
 

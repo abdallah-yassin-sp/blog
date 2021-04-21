@@ -1,9 +1,10 @@
 <?php
 session_start();
 require_once("../includes/Article.inc.php");
-$category_articles = new Article();
+require_once("../includes/Category.inc.php");
+$categories = new Category();
+$categories = $categories->get_all_categories();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +21,9 @@ $category_articles = new Article();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <!-- Custome Style -->
     <link rel="stylesheet" href="../style/style.css" />
+    <!-- Custome JS -->
+    <script src="../assets/script.js" defer></script>
+
 </head>
 
 <body>
@@ -27,7 +31,7 @@ $category_articles = new Article();
     <div class="header">
         <div class="header-1 row">
             <div class="container">
-                <a href="views/index.php" class="logo col-lg-6">
+                <a href="index.php" class="logo col-lg-6">
                     <h2>WRITE YOUR NAME</h2>
                 </a>
                 <div class="right-col col-lg-6">
@@ -36,13 +40,13 @@ $category_articles = new Article();
                     if (isset($_SESSION['user'])) {
                         foreach ($_SESSION['user'] as $data) {
                     ?>
-                            <a href="user.php?user=<?php echo $data['id'] ?>"><?php echo $data['first_name'] ?></a>
-                            <a href="logout.php">LOGOUT</a>
+                            <a href="index.php?page=user&user=<?php echo $data['user_id'] ?>"><?php echo $data['first_name'] ?></a>
+                            <a href="index.php?page=logout">LOGOUT</a>
                         <?php
                         }
                     } else {
                         ?>
-                        <a href="signIn.php">Sign in</a>
+                        <a href="index.php?page=signin">Sign in</a>
                     <?php
                     }
                     ?>
@@ -61,24 +65,15 @@ $category_articles = new Article();
                             <li class="nav-item">
                                 <a class="nav-link" aria-current="page" href="index.php">HOME</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="category.php?category=architecture">ARCHITECTURE</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="category.php?category=art-and-illustration">ART & ILLUSTRATION</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="category.php?category=business-and-corporate">BUSINESS & CORPORATE</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="category.php?category=culture-and-education">CULTURE & EDUCATION</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="category.php?category=e-commerce">E-COMMERCE</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="category.php?category=design-agencies">DESIGN AGENCIES</a>
-                            </li>
+                            <?php
+                            foreach ($categories as $category) {
+                            ?>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.php?page=category&category=<?= $category['cat_name'] ?>"><?= $category['cat_name'] ?></a>
+                                </li>
+                            <?php
+                            }
+                            ?>
                         </ul>
                     </div>
                 </nav>

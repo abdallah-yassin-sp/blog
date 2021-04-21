@@ -1,0 +1,39 @@
+.article-image {
+  img {
+    width: 100%;
+  }
+}
+.article-contents {
+  h1 {
+    margin-top: 20px;
+  }
+  span {
+    color: $light_grey;
+  }
+  p {
+    margin-top: 1rem;
+  }
+}
+
+.comments-section {
+  background-color: $light_blue;
+  padding: 20px 0px;
+}
+
+.related-section {
+  margin-top: 50px;
+  h2 {
+    margin-bottom: 20px;
+  }
+  .related-articles-container {
+    display: flex;
+    .related-article {
+      padding: 0px 10px 0px 0px;
+    }
+    img {
+      max-width: 100%;
+      min-height: 200px;
+      object-fit: cover;
+    }
+  }
+}

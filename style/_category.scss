@@ -1,0 +1,30 @@
+.category-title {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.category_page {
+  display: flex;
+  .left-column {
+    flex: 65%;
+    display: flex;
+    flex-wrap: wrap;
+    .category_article {
+      padding-right: 20px;
+      flex: 50%;
+      max-width: 50%;
+      img {
+        max-width: 100%;
+        min-height: 200px;
+        object-fit: cover;
+      }
+    }
+  }
+  .right-column {
+    flex: 35%;
+    .categories {
+      background-color: $light_blue;
+      padding: 20px 10px;
+    }
+  }
+}
