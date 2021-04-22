@@ -188,12 +188,12 @@ a:hover {
           flex: 65%;
 }
 
-.home-left-column .article {
+.article {
   padding-right: 20px;
   margin-bottom: 50px;
 }
 
-.home-left-column .article img {
+.article img {
   width: 100%;
   min-height: 300px;
   -o-object-fit: cover;
@@ -656,6 +656,67 @@ footer {
   padding: 20px 0px;
 }
 
+.comments-section textarea {
+  width: 100%;
+  resize: none;
+  padding: 10px;
+}
+
+.comments-section .comment-name-and-email {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10px;
+}
+
+.comments-section .comment-name-and-email .name,
+.comments-section .comment-name-and-email .email {
+  -webkit-box-flex: 50%;
+      -ms-flex: 50%;
+          flex: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.comments-section .comment-name-and-email .name input,
+.comments-section .comment-name-and-email .email input {
+  padding: 10px;
+  width: 100%;
+}
+
+.comments-section .comment-name-and-email .name {
+  padding: 10px 10px 10px 0px;
+}
+
+.comments-section .comment-name-and-email .email {
+  padding: 10px 0px 10px 10px;
+}
+
+.comments-section .submit {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.comments-section .submit input {
+  -webkit-box-flex: 50%;
+      -ms-flex: 50%;
+          flex: 50%;
+  max-width: 150px;
+}
+
 .related-section {
   margin-top: 50px;
 }
@@ -679,5 +740,11 @@ footer {
   min-height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.comment {
+  border: 1px solid #000;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -29,7 +29,7 @@ CREATE TABLE blog_db.categories (
 
 CREATE TABLE blog_db.comments (
     comment_id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    body VARCHAR(250) NOT NULL,
+    body TEXT(250) NOT NULL,
     author_name VARCHAR(150),
     author_email VARCHAR(150),
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -127,3 +127,6 @@ Insert INTO articles (title, body, cat_id, user_id, image, views) VALUES ("artic
 INSERT INTO slider (image_name, slide_heaeding) VALUES ("1_KWvw0J4A3S8DwGlxyvzgqQ.jpeg", "Applying Usability Principles to Stackholder Management");
 INSERT INTO slider (image_name, slide_heaeding) VALUES ("1_KWvw0J4A3S8DwGlxyvzgqQ.jpeg", "Applying Usability Principles to Stackholder Management");
 INSERT INTO slider (image_name, slide_heaeding) VALUES ("1_KWvw0J4A3S8DwGlxyvzgqQ.jpeg", "Applying Usability Principles to Stackholder Management");
+
+INSERT INTO comments (body, author_name, author_email, article_id) VALUE ("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", "Ahmad", "ahmad@test.com", 46);
+INSERT INTO comments (body, author_name, author_email, article_id) VALUE ("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", "Ola", "ola@test.com", 46);

@@ -60,9 +60,9 @@ class User
         }
     }
 
-    public function get_user_articles($user)
+    public function get_user_articles($user_id)
     {
-        $query = "SELECT title, body from articles WHERE user_id = {$user}";
+        $query = "SELECT article_id, title, body, image from articles WHERE user_id = {$user_id}";
 
         $result = $this->db_connect()->query($query);
         $rows = $result->num_rows;

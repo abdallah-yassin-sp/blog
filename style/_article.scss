@@ -18,6 +18,45 @@
 .comments-section {
   background-color: $light_blue;
   padding: 20px 0px;
+
+  textarea {
+    width: 100%;
+    resize: none;
+    padding: 10px;
+  }
+
+  .comment-name-and-email {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+    .name,
+    .email {
+      flex: 50%;
+      box-sizing: border-box;
+      input {
+        padding: 10px;
+        width: 100%;
+      }
+    }
+    .name {
+      padding: 10px 10px 10px 0px;
+    }
+    .email {
+      padding: 10px 0px 10px 10px;
+    }
+  }
+
+  .submit {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input {
+      flex: 50%;
+      max-width: 150px;
+    }
+  }
 }
 
 .related-section {
@@ -36,4 +75,10 @@
       object-fit: cover;
     }
   }
+}
+
+.comment {
+  border: 1px solid $black;
+  padding: 10px;
+  margin-bottom: 10px;
 }

@@ -41,14 +41,15 @@
 .home-left-column {
   padding-left: 10px;
   flex: 65%;
-  .article {
-    padding-right: 20px;
-    margin-bottom: 50px;
-    img {
-      width: 100%;
-      min-height: 300px;
-      object-fit: cover;
-    }
+}
+
+.article {
+  padding-right: 20px;
+  margin-bottom: 50px;
+  img {
+    width: 100%;
+    min-height: 300px;
+    object-fit: cover;
   }
 }
 
