@@ -1,0 +1,13 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^$ index.php [NC]
+RewriteRule ^home$ index.php [NC]
+RewriteRule ^user$ index.php?page=user [NC]
+RewriteRule ^404$ index.php?page=404 [NC]
+RewriteRule ^signin$ index.php?page=signin [NC]
+RewriteRule ^signup$ index.php?page=signup [NC]
+
+ErrorDocument 404 /index.php

@@ -63,7 +63,7 @@ class Article
             return "This file extension not allowed";
         }
 
-        $sql = "INSERT INTO articles (title, body, user_id, cat_id, img) 
+        $sql = "INSERT INTO articles (title, body, user_id, cat_id, image) 
         VALUES ('$this->title', '$this->body', '$this->user','$this->category', '$image_name')";
 
         $new_article = $this->db_connect()->query($sql);

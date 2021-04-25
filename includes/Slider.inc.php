@@ -1,5 +1,5 @@
 <?php
-require_once("../includes/DB.inc.php");
+require_once("DB.inc.php");
 
 class Slider
 {

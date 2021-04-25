@@ -2,7 +2,7 @@ jQuery(document).ready(function(){
     jQuery('#load_more_btn').on('click', function() {
         var id = jQuery('#load_more_btn').data('id');
         $.ajax({
-            url: "home-load-more.php",
+            url: "views/home-load-more.php",
             type: "post",
             data: {
                 id: id
@@ -18,7 +18,7 @@ jQuery(document).ready(function(){
         var id = jQuery('#category_load_more_btn').data('id');
         var category = jQuery('#category_load_more_btn').data('category');
         $.ajax({
-            url: "category-load-more.php",
+            url: "views/category-load-more.php",
             type: "post",
             data: {
                 id: id,

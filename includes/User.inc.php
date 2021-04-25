@@ -62,7 +62,7 @@ class User
 
     public function get_user_articles($user_id)
     {
-        $query = "SELECT article_id, title, body, image from articles WHERE user_id = {$user_id}";
+        $query = "SELECT article_id, title, body, image from articles WHERE user_id = '{$user_id}' ORDER BY created_at DESC";
 
         $result = $this->db_connect()->query($query);
         $rows = $result->num_rows;

@@ -8,7 +8,7 @@ foreach ($art2 as $article) {
 ?>
     <div class="article">
         <a href="<?= $article['article_id'] ?>">
-            <img src="../assets/images/<?= $article['image'] ?>" alt="ARTICLE IMAGE">
+            <img src="assets/images/<?= $article['image'] ?>" alt="ARTICLE IMAGE">
             <h4><?= $article['cat_name'] ?></h4>
             <h2><?= $article['title'] ?></h2>
             <p><?= substr($article['body'], 0, 200) . "..." ?></p>
@@ -22,4 +22,4 @@ foreach ($art2 as $article) {
     <button id="load_more_btn" class="btn btn-outline-success" data-id="<?= $last_id ?>">LOAD MORE</button>
 </div>
 
-<script src="../assets/script.js"></script>
+<script src="assets/script.js"></script>
