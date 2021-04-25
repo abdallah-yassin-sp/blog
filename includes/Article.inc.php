@@ -9,11 +9,11 @@ class Article
     private $user;
     private $category;
     private $image;
+    private $db;
 
-    private function db_connect()
+    public function __construct()
     {
-        $db = new DB();
-        return $db->connect();
+        $this->db = new DB;
     }
 
     public function post($user, $title, $body, $category, $image)
@@ -75,7 +75,7 @@ class Article
     public function get_article($article_id)
     {
         $query = "SELECT * FROM articles WHERE article_id = '{$article_id}'";
-        $result = $this->db_connect()->query($query);
+        $result = $this->db->query($query);
         $rows = $result->num_rows;
         if ($rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -89,8 +89,7 @@ class Article
     {
         $get_cat_id = "SELECT * FROM articles JOIN categories ON articles.cat_id = categories.category_id 
         WHERE cat_name = '{$category_name}' ORDER BY article_id LIMIT 8";
-        // echo $get_cat_id;
-        // die();
+
         $category_result = $this->db_connect()->query($get_cat_id);
         $rows = $category_result->num_rows;
         if ($rows > 0) {
