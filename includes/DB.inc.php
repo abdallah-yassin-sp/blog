@@ -7,7 +7,7 @@ class DB
     private $password;
     private $db_name;
 
-    public function __construct()
+    public function connect()
     {
         $this->server_name = "localhost";
         $this->username = "root";
@@ -18,6 +18,6 @@ class DB
         if ($con->connect_error) {
             die("Connection failed: " . $con->connect_error);
         }
-        // return $con;
+        return $con;
     }
 }

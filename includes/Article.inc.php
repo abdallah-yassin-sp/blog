@@ -11,9 +11,10 @@ class Article
     private $image;
     private $db;
 
-    public function __construct()
+    public function db_connect()
     {
-        $this->db = new DB;
+        $db = new DB();
+        return $db->connect();
     }
 
     public function post($user, $title, $body, $category, $image)

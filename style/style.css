@@ -245,6 +245,10 @@ a:hover {
   color: #888888;
 }
 
+#carouselExampleIndicators {
+  width: 100%;
+}
+
 .sign-in-page .container {
   display: -webkit-box;
   display: -ms-flexbox;

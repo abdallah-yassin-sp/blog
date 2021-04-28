@@ -16,7 +16,11 @@ $home_popular_articles = $new_article->get_popular_articles();
 $category = new Category();
 $categories = $category->get_all_categories();
 
-$page = $_GET['page'];
+if(isset($_GET['page'])){
+    $page = $_GET['page'];
+}else{
+    $page = "";
+}
 ?>
 
 <!DOCTYPE html>

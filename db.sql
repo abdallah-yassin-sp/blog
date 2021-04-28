@@ -36,7 +36,7 @@ CREATE TABLE blog_db.comments (
     article_id INT(10) NOT NULL
 );
 
-CREATE TABLE blog.slider(
+CREATE TABLE blog_db.slider(
     id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     image_name VARCHAR(150) NOT NULL DEFAULT "placeholoder.jpg",
     slide_heaeding VARCHAR(250)
